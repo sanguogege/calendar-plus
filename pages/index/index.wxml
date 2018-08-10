@@ -1,0 +1,25 @@
+<!--index.wxml-->
+
+<datepick-plus bind:submit='submit' showDatePickPlus='{{show}}'></datepick-plus>
+
+<view class='getC' catchtap='showDatePcik'>
+    点击打开日历插件哦
+</view>
+<view>{{}}</view>
+<view>{{}}</view>
+<view>{{}}</view>
+
+
+
+<!-- 用法 -->
+<!-- 1、直接拷贝文件夹datepick-plus 到根目录 -->
+<!-- 2、当前应用页面的json文件里设置 
+    {
+        "usingComponents": {
+            "datepick-plus": "/datepick-plus/index"
+    }
+} -->
+<!-- 3、页面控件的引用 <datepick-plus bind:submit='submit' showDatePickPlus='{{show}}'></datepick-plus> 
+        其中datepick-plus是usingComponents里设置的；submit必填绑定控件确定效果的
+-->
+<!--  属性全在 本页面js文件里submit方法后-->

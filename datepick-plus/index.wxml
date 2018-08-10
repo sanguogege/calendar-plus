@@ -1,0 +1,44 @@
+<view class='pick-mask' wx:if="{{ showDatePickPlus }}" bindtap='closeDatePickPlus'></view>
+<view class='pick-box' wx:if="{{showDatePickPlus}}">
+    <text class='pick-result'>{{dataResult}}</text>
+    <view class='pick-head'>
+        <view class='pick-toggle'>
+            <view class='gl pick-rl {{datePickerAttr.dateType == 1 ? "selected" : ""}}' catchtap='toGL'>公历</view>
+            <view class='nl pick-rl {{datePickerAttr.dateType == 2 ? "selected" : ""}}' catchtap='toNL'>农历</view>
+        </view>
+    </view>
+    <view class='pick-content'>
+        <picker-view value="{{glDateIndex}}" bindchange="changeYl" indicator-class="mid-check" wx:if="{{ datePickerAttr.dateType == 1}}">
+            <picker-view-column >
+                <view wx:for="{{glYears}}" wx:key>{{item}}</view>
+            </picker-view-column>
+            <picker-view-column>
+                <view wx:for="{{glMonths}}" wx:key>{{item}}</view>
+            </picker-view-column>
+            <picker-view-column>
+                <view wx:for="{{glDays}}" wx:key>{{item}}</view>
+            </picker-view-column>
+            <picker-view-column>
+                <view wx:for="{{glhours}}" wx:key>{{item}}</view>
+            </picker-view-column>
+        </picker-view>
+        <picker-view value="{{nlDateIndex}}" bindchange="changeNl" indicator-class="mid-check" wx:if="{{ datePickerAttr.dateType == 2}}">
+            <picker-view-column>
+                <view wx:for="{{nlYears}}" wx:key>{{item}}</view>
+            </picker-view-column>
+            <picker-view-column>
+                <view wx:for="{{nlMonths}}" wx:key>{{item}}</view>
+            </picker-view-column>
+            <picker-view-column>
+                <view wx:for="{{nlDays}}" wx:key>{{item}}</view>
+            </picker-view-column>
+            <picker-view-column>
+                <view wx:for="{{nlhours}}" wx:key>{{item}}</view>
+            </picker-view-column>
+        </picker-view>
+    </view>
+    <view class='pick-btn'>
+        <view class='pick-left' bindtap='closeDatePickPlus'>取消</view>
+        <view class='pick-right' bindtap='submitSelectDate'>确定</view>
+    </view>
+</view>

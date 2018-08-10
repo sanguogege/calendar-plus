@@ -1,0 +1,5 @@
+{
+    "usingComponents": {
+        "datepick-plus": "/datepick-plus/index"
+    }
+}
